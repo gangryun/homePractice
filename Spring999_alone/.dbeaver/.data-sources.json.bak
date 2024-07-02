@@ -1,11 +1,12 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-1906e27c013-6e24891d6361f60e": {
+		"oracle_thin-1906e27f3e7-61e8b93bf8787c98": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "localhost",
 			"save-password": true,
+			"read-only": true,
 			"configuration": {
 				"host": "localhost",
 				"port": "1521",

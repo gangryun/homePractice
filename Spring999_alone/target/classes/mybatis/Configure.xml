@@ -3,12 +3,12 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="com.min.edu.vo.EmpInfoVo" alias="EmpInfoVo"/>
+		<typeAlias type="com.min.edu.vo.UserVo" alias="UserVo"/>
 	</typeAliases>
 
 
 	<mappers>
-		<mapper resource="sqls/EmpInfo_Statement.xml"/>
+		<mapper resource="sqls/UserVo_Statement.xml"/>
 	</mappers>
 
 </configuration>
