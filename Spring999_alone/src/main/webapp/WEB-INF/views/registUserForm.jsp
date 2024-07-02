@@ -10,11 +10,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+var check="N";
+
+$( document ).ready(function() {
+	$("#id").on("change keyup paste", function(){
+		console.log('??')
+		check = "N";
+	})
+});
 
 
 function duplicateCheck(){
-// 	window.open("./registUser.do", "_blank", "width=400px, height=350px, left=300px, top=250px")
-// 		}
+
+	
 	var id = document.getElementById("id");
 	var text = document.getElementById("checkText");
 	
@@ -28,8 +36,6 @@ function duplicateCheck(){
 		id.focus();
 		return;
 	}
-	
-	
 	
 	
 	fetch("./duplicateId.do",{
@@ -55,6 +61,7 @@ function duplicateCheck(){
 			text.textContent= "사용할 수 없는 아이디입니다."
 			document.getElementById("id").style.width="70%";
 		} else{
+			check="Y";
 			text.style.color = "blue";
 			text.textContent= "사용할 수 있는 아이디입니다."
 			document.getElementById("useId").style.display="block";
@@ -70,10 +77,10 @@ function duplicateCheck(){
 		var id = document.getElementById("id");
 		var text = document.getElementById("checkText");
 		var btn = document.getElementById("duplicateBtn");
-
-		id.setAttribute("readonly","readonly");
+		console.log("check : " + check);
+// 		id.setAttribute("readonly","readonly");
 		text.style.display = "none";
-		btn.style.display = "none";
+// 		btn.style.display = "none";
 		document.getElementById("useId").style.display = "none";
 		
 	}
@@ -89,7 +96,7 @@ function duplicateCheck(){
 				<tr>
 					<td>아이디</td>
 					<td>
-						<input type="text" class="form-control" name="id" id="id" placeholder="아이디" hidden="N" style=" display: inline; width: 80%;">
+						<input type="text" class="form-control" name="id" id="id" placeholder="아이디" style="display: inline; width: 80%;">
 						<p id="checkText" style="display: inline;"></p>
 						<button type="button" id="duplicateBtn" class="btn btn-success btn-sm" style="float: right;" onclick="duplicateCheck()">중복확인</button>
 						<button type="button" id="useId" class="btn btn-info btn-sm" style="float: right; margin-right:6px; display: none;" onclick="idUse()">사용</button>
