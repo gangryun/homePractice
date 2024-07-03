@@ -9,10 +9,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/user.js"></script>
 </head>
 <body>
 <div class="container" style="margin-top: 200px; width: 500px; height: 350px; text-align: center;">
-	<form action="./login.do" method="post">
+	
 		<table class="table table-striped">
 			<tr>
 				<td>아이디</td>
@@ -28,13 +29,13 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input class="btn btn-success" type="submit" value="로그인">
+					<input class="btn btn-success" type="button" value="로그인" onclick="login()">
 					<button class="btn btn-info" type="button" onclick="location.href='./registUser.do'">회원가입</button>
-					<button class="btn btn-danger" type="button" onclick="findUserId()">아이디찾기</button>
+					<button class="btn btn-danger" type="button" onclick="location.href='./findIdPage.do'">아이디찾기</button>
 				</td>
 			</tr>
 		</table>
-	</form>
+	
 </div>
 </body>
 </html>

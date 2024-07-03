@@ -42,4 +42,23 @@
   </update>
   
   
+  <select id="findId" resultType="String">
+  	SELECT ID
+  		FROM ZZZUSER
+  			WHERE 1=1
+  				<choose>
+  					<when test="name != null">
+  					 AND NAME = #{name}
+  					 AND PHONE = #{phone}
+  					</when>
+  					<otherwise>
+  					 AND email = #{email}
+  					</otherwise>
+  				</choose>
+  				
+  				
+  </select>
+  
+  
+  
 </mapper>

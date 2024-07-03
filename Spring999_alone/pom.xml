@@ -36,6 +36,7 @@
 			</exclusions>
 		</dependency>
   		
+  		
   		<!-- 
   			Spring MVC 개발에 Stereotype인 @Component @Controller 
   			@Service @Repository 의 Annotation 기능을 사용할 수 있도록 해줌. 
@@ -129,6 +130,7 @@
 			<scope>provided</scope>
 		</dependency>
   		
+  		
   		<!-- 
   			tomcat이 4.0이면 jstl은 javax.servlet에 사용됨
   			tomcat 5.0~6.0이라면 jakarta로 변경되었기때문에 
@@ -139,6 +141,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+  		
   		
   		<!-- 
   			AspectJ : 관점지향 프로그래밍
@@ -180,7 +183,7 @@
 		</dependency>
 
   		
-  		<!-- -->
+
   		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis</artifactId>
@@ -188,7 +191,7 @@
 		</dependency>
 
   		
-  		<!-- -->
+
 		<dependency>
 		    <groupId>commons-dbcp</groupId>
 		    <artifactId>commons-dbcp</artifactId>
@@ -196,7 +199,7 @@
 		</dependency>
 
 		
-		<!-- -->
+
   		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis-spring</artifactId>

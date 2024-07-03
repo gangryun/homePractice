@@ -20,12 +20,10 @@ public class DaoLogAdvice {
 		}
 	}
 	
-	
 	public void afterReturning(JoinPoint j, Object returnVal) {
 		Logger log = LoggerFactory.getLogger(j.getTarget()+"");
 		log.info("[Logger 반환 결과] : {}", returnVal);
 	}
-	
 	
 	public void afterThrowing(JoinPoint j, Exception error) {
 		Logger log = LoggerFactory.getLogger(j.getTarget()+"");

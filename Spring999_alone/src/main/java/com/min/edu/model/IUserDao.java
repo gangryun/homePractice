@@ -14,6 +14,6 @@ public interface IUserDao {
 	
 	public int modifyInfo(Map<String, Object> map);
 	
-	
+	public String findId(UserVo vo);
 	
 }

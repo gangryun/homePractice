@@ -14,4 +14,5 @@ public interface IUserService {
 	
 	public int modifyInfo(Map<String, Object> map);
 	
+	public String findId(UserVo vo);
 }

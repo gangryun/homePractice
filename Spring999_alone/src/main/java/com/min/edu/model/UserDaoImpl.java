@@ -41,4 +41,13 @@ public class UserDaoImpl implements IUserDao {
 		return session.update(NS+"modifyInfo", map);
 	}
 
+	@Override
+	public String findId(UserVo vo) {
+		return session.selectOne(NS+"findId", vo);
+	}
+
+	
+	
+	
+	
 }

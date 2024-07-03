@@ -41,4 +41,12 @@ public class UserServiceImpl implements IUserService {
 		return dao.modifyInfo(map);
 	}
 
+	@Override
+	public String findId(UserVo vo) {
+		log.info("UserServiceImpl findId");
+		return dao.findId(vo);
+	}
+	
+	
+	
 }

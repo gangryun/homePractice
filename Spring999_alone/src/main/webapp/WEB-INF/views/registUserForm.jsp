@@ -14,7 +14,10 @@ var check="N";
 
 $( document ).ready(function() {
 	$("#id").on("change keyup paste", function(){
-		console.log('??')
+ 		document.getElementById("checkText").style.display = "inline";
+		document.getElementById("checkText").style.color = "green";
+		document.getElementById("checkText").innerHTML = "중복확인을 진행해주세요.";
+		document.getElementById("id").style.width="60%";
 		check = "N";
 	})
 });
@@ -23,21 +26,31 @@ $( document ).ready(function() {
 function duplicateCheck(){
 
 	
-	var id = document.getElementById("id");
+	var id = document.getElementById("id").value;
 	var text = document.getElementById("checkText");
+	const idRegex =  /^[a-zA-Z](?=.*[a-zA-Z])(?=.*[0-9]).{4,12}$/g;
 	
-	if(id.value == ""){
+	
+	
+	if(id == ""){
 		alert('아이디를 입력해주세요.');
 		id.focus();
 		return;
 	}
-	if(id.value.length <4){
+	if(id.length <4){
 		alert("4글자 이상을 입력해주세요.");
 		id.focus();
 		return;
 	}
 	
+	if (!id.match(idRegex)) {
+	    alert("영문/숫자만 입력해주세요.");
+	    return;
+	}
 	
+	
+	
+	return ;
 	fetch("./duplicateId.do",{
 		
 		method:"post",
@@ -59,13 +72,14 @@ function duplicateCheck(){
 		if(msg == "true"){
 			text.style.color = "red";
 			text.textContent= "사용할 수 없는 아이디입니다."
-			document.getElementById("id").style.width="70%";
+			document.getElementById("useId").style.display="none";
+			document.getElementById("id").style.width="60%";
 		} else{
 			check="Y";
 			text.style.color = "blue";
 			text.textContent= "사용할 수 있는 아이디입니다."
 			document.getElementById("useId").style.display="block";
-			document.getElementById("id").style.width="50%";
+			document.getElementById("id").style.width="60%";
 			document.getElementById("id").hidden = "Y";
 		}
 		
@@ -78,9 +92,7 @@ function duplicateCheck(){
 		var text = document.getElementById("checkText");
 		var btn = document.getElementById("duplicateBtn");
 		console.log("check : " + check);
-// 		id.setAttribute("readonly","readonly");
 		text.style.display = "none";
-// 		btn.style.display = "none";
 		document.getElementById("useId").style.display = "none";
 		
 	}

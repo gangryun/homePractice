@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <html>
 <body>
-	<fieldset>
-		<legend>INDEX</legend>
-		<h2>Hello World!</h2>
-		<button onclick="location.href='./login.do'">누르세요</button>
-	</fieldset>
+	<jsp:forward page="./WEB-INF/views/loginForm.jsp"/>
 </body>
 </html>
